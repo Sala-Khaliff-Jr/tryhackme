@@ -1,0 +1,10 @@
+
+Day 7
+XSS
+<script>alert("Hello")</script>
+
+Day 8 
+Insecure Deserialization
+developed by
+    The apache server foundation
+

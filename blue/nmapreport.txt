@@ -1,0 +1,177 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-08-19 09:03 EDT
+NSE: Loaded 149 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 09:03
+Completed NSE at 09:03, 10.01s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 09:03
+Completed NSE at 09:03, 0.00s elapsed
+Initiating Ping Scan at 09:03
+Scanning 10.10.133.39 [2 ports]
+Completed Ping Scan at 09:03, 0.38s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 09:03
+Completed Parallel DNS resolution of 1 host. at 09:03, 0.07s elapsed
+Initiating Connect Scan at 09:03
+Scanning 10.10.133.39 [1000 ports]
+Discovered open port 139/tcp on 10.10.133.39
+Discovered open port 445/tcp on 10.10.133.39
+Discovered open port 135/tcp on 10.10.133.39
+Discovered open port 3389/tcp on 10.10.133.39
+Discovered open port 49158/tcp on 10.10.133.39
+Increasing send delay for 10.10.133.39 from 0 to 5 due to max_successful_tryno increase to 4
+Increasing send delay for 10.10.133.39 from 5 to 10 due to max_successful_tryno increase to 5
+Discovered open port 49152/tcp on 10.10.133.39
+Discovered open port 49154/tcp on 10.10.133.39
+Discovered open port 49160/tcp on 10.10.133.39
+Discovered open port 49153/tcp on 10.10.133.39
+Completed Connect Scan at 09:03, 34.87s elapsed (1000 total ports)
+Initiating Service scan at 09:03
+Scanning 9 services on 10.10.133.39
+Service scan Timing: About 55.56% done; ETC: 09:05 (0:00:48 remaining)
+Completed Service scan at 09:04, 65.16s elapsed (9 services on 1 host)
+NSE: Script scanning 10.10.133.39.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 09:04
+NSE: [firewall-bypass 10.10.133.39] lacks privileges.
+Completed NSE at 09:05, 30.07s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 09:05
+NSE: [tls-ticketbleed 10.10.133.39:445] Not running due to lack of privileges.
+Completed NSE at 09:05, 1.58s elapsed
+Nmap scan report for 10.10.133.39
+Host is up, received conn-refused (0.21s latency).
+Scanned at 2020-08-19 09:03:12 EDT for 132s
+Not shown: 991 closed ports
+Reason: 991 conn-refused
+PORT      STATE SERVICE            REASON  VERSION
+135/tcp   open  msrpc              syn-ack Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+139/tcp   open  netbios-ssn        syn-ack Microsoft Windows netbios-ssn
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+445/tcp   open  microsoft-ds       syn-ack Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+3389/tcp  open  ssl/ms-wbt-server? syn-ack
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| rdp-vuln-ms12-020: 
+|   VULNERABLE:
+|   MS12-020 Remote Desktop Protocol Denial Of Service Vulnerability
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2012-0152
+|     Risk factor: Medium  CVSSv2: 4.3 (MEDIUM) (AV:N/AC:M/Au:N/C:N/I:N/A:P)
+|           Remote Desktop Protocol vulnerability that could allow remote attackers to cause a denial of service.
+|           
+|     Disclosure date: 2012-03-13
+|     References:
+|       http://technet.microsoft.com/en-us/security/bulletin/ms12-020
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0152
+|   
+|   MS12-020 Remote Desktop Protocol Remote Code Execution Vulnerability
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2012-0002
+|     Risk factor: High  CVSSv2: 9.3 (HIGH) (AV:N/AC:M/Au:N/C:C/I:C/A:C)
+|           Remote Desktop Protocol vulnerability that could allow remote attackers to execute arbitrary code on the targeted system.
+|           
+|     Disclosure date: 2012-03-13
+|     References:
+|       http://technet.microsoft.com/en-us/security/bulletin/ms12-020
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0002
+|_sslv2-drown: 
+49152/tcp open  msrpc              syn-ack Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49153/tcp open  msrpc              syn-ack Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49154/tcp open  msrpc              syn-ack Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49158/tcp open  msrpc              syn-ack Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+49160/tcp open  msrpc              syn-ack Microsoft Windows RPC
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+Service Info: Host: JON-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_samba-vuln-cve-2012-1182: NT_STATUS_ACCESS_DENIED
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: NT_STATUS_ACCESS_DENIED
+| smb-vuln-ms17-010: 
+|   VULNERABLE:
+|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-0143
+|     Risk factor: HIGH
+|       A critical remote code execution vulnerability exists in Microsoft SMBv1
+|        servers (ms17-010).
+|           
+|     Disclosure date: 2017-03-14
+|     References:
+|       https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
+|       https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 09:05
+Completed NSE at 09:05, 0.00s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 09:05
+Completed NSE at 09:05, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 144.11 seconds
+
+
+
+
+
+
+
+
+
+rocess List
+============
+
+ PID   PPID  Name                  Arch  Session  User                          Path
+ ---   ----  ----                  ----  -------  ----                          ----
+ 0     0     [System Process]                                                   
+ 4     0     System                x64   0                                      
+ 356   1348  cmd.exe               x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\cmd.exe
+ 416   4     smss.exe              x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\smss.exe
+ 432   708   svchost.exe           x64   0        NT AUTHORITY\SYSTEM           
+ 564   552   csrss.exe             x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\csrss.exe
+ 612   552   wininit.exe           x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\wininit.exe
+ 620   604   csrss.exe             x64   1        NT AUTHORITY\SYSTEM           C:\Windows\System32\csrss.exe
+ 660   604   winlogon.exe          x64   1        NT AUTHORITY\SYSTEM           C:\Windows\System32\winlogon.exe
+ 708   612   services.exe          x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\services.exe
+ 716   612   lsass.exe             x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\lsass.exe
+ 724   612   lsm.exe               x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\lsm.exe
+ 780   708   svchost.exe           x64   0        NT AUTHORITY\SYSTEM           
+ 832   708   svchost.exe           x64   0        NT AUTHORITY\SYSTEM           
+ 900   708   svchost.exe           x64   0        NT AUTHORITY\NETWORK SERVICE  
+ 948   708   svchost.exe           x64   0        NT AUTHORITY\LOCAL SERVICE    
+ 1016  660   LogonUI.exe           x64   1        NT AUTHORITY\SYSTEM           C:\Windows\System32\LogonUI.exe
+ 1120  708   svchost.exe           x64   0        NT AUTHORITY\LOCAL SERVICE    
+ 1200  708   svchost.exe           x64   0        NT AUTHORITY\NETWORK SERVICE  
+ 1272  2584  powershell.exe        x86   0        NT AUTHORITY\SYSTEM           C:\Windows\syswow64\WindowsPowerShell\v1.0\powershell.exe
+ 1348  708   spoolsv.exe           x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\spoolsv.exe
+ 1384  708   svchost.exe           x64   0        NT AUTHORITY\LOCAL SERVICE    
+ 1420  1600  powershell.exe        x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ 1456  708   amazon-ssm-agent.exe  x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\SSM\amazon-ssm-agent.exe
+ 1528  708   LiteAgent.exe         x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\Xentools\LiteAgent.exe
+ 1600  356   cmd.exe               x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\cmd.exe
+ 1656  708   Ec2Config.exe         x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\Ec2ConfigService\Ec2Config.exe
+ 1772  564   conhost.exe           x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\conhost.exe
+ 1980  708   svchost.exe           x64   0        NT AUTHORITY\NETWORK SERVICE  
+ 2300  564   conhost.exe           x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\conhost.exe
+ 2340  1272  cmd.exe               x86   0        NT AUTHORITY\SYSTEM           C:\Windows\SysWOW64\cmd.exe
+ 2608  564   conhost.exe           x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\conhost.exe
+ 2624  708   svchost.exe           x64   0        NT AUTHORITY\LOCAL SERVICE    
+ 2652  708   sppsvc.exe            x64   0        NT AUTHORITY\NETWORK SERVICE  
+ 2688  708   svchost.exe           x64   0        NT AUTHORITY\SYSTEM           
+ 2756  708   SearchIndexer.exe     x64   0        NT AUTHORITY\SYSTEM  
+ 
+ 
+ 
+ 
+ 
+ Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d:::
+

