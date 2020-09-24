@@ -1,0 +1,4 @@
+hash-identifier
+hashcat
+johntheripper
+hashid
