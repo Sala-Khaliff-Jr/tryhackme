@@ -55,6 +55,8 @@ https://launchpad.net/ubuntu/bionic/amd64/bsdgames/2.17-26build1
 
 http://www.unit-conversion.info/texttools/morse-code/
 
+BrowserLing Decoder
+https://www.browserling.com/tools/morse-to-text
 
 ### #9 85 110 112 97 99 107 32 116 104 105 115 32 66 67 68  
 
@@ -63,4 +65,22 @@ http://www.unit-conversion.info/texttools/morse-code/
 `python3 1_9.py`
 
 
-### #10 
+### #10 LS0tLS0gLi0tLS0gLi0tLS0gLS0tLS0gLS0tLS0gLi0tLS0g
+
+    let's make this a bit trickier..
+
+`base64 -d 1_10.enc > 1_10.morse`
+
+morse to bin using previous methods
+
+`python3 1_10bin.py`
+
+    320/000214002100/4430/30/0100020/10/2002104310430/2002100020010/2440/30/20/000112121e
+
+`echo "320/000214002100/4430/30/0100020/10/2002104310430/2002100020010/2440/30/20/000112121e" | tr '\!-~' 'P-~\!-O'`
+
+rot47 the above output
+
+convert above from decimal to char
+
+    
